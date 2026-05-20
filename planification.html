@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Planification - SAÉ S1.03</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">
+      <i class="bi bi-terminal me-2 text-primary"></i>SAÉ S1.03
+    </a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav gap-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="installation.html">Installation</a></li>
+        <li class="nav-item"><a class="nav-link" href="administration.html">Administration</a></li>
+        <li class="nav-item"><a class="nav-link active" href="planification.html">Planification</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5 pt-5">
+  <h1 class="text-center mb-5 fw-bold text-gradient">Gestion de Projet</h1>
+
+  <div class="glass-card p-4 shadow mb-5">
+    <h3 class="text-danger mb-4"><i class="bi bi-calendar-range me-2"></i>Diagramme de Gantt Prévisionnel</h3>
+
+    <div class="table-responsive bg-black-50 p-3 rounded">
+      <table class="table table-borderless text-white align-middle">
+        <thead>
+        <tr class="text-muted small border-bottom border-secondary">
+          <th style="width: 30%;">Phases / Semaines</th>
+          <th class="text-center">10/11<br><small>S1-B1</small></th>
+          <th class="text-center">17/11<br><small>S1-B2</small></th>
+          <th class="text-center">24/11<br><small>S1-B3</small></th>
+          <th class="text-center">01/12<br><small>S1-B4</small></th>
+          <th class="text-center">08/12<br><small>S1-B5</small></th>
+        </tr>
+        </thead>
+        <tbody class="small">
+        <tr>
+          <td>Installation Hyperviseur & MV</td>
+          <td><div class="gantt-bar bg-primary" title="Installation Oracle VM VirtualBox et Ubuntu"></div></td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td>Mise à jour & Optimisation</td>
+          <td></td>
+          <td><div class="gantt-bar bg-secondary" title="Update/Upgrade et Additions Invités"></div></td>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td>Gestion Utilisateurs & Prompt</td>
+          <td></td><td></td>
+          <td><div class="gantt-bar bg-accent" title="Création des comptes et personnalisation Bashrc"></div></td>
+          <td></td><td></td>
+        </tr>
+        <tr>
+          <td>Serveur Apache & Déploiement</td>
+          <td></td><td></td><td></td>
+          <td><div class="gantt-bar bg-info" title="Installation Apache2 et configuration WebStorm"></div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Rapport Web & Soutenance</td>
+          <td></td><td></td><td></td><td></td>
+          <td><div class="gantt-bar bg-success" title="Finalisation du site et passage devant jury"></div></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-4 p-3 bg-dark rounded border-start border-danger border-3">
+      <p class="small mb-0">
+        <strong>Justification de la planification :</strong> Ce diagramme de Gantt reflète le cycle de vie du projet débuté le <strong>10 novembre</strong>. Chaque bloc correspond à une étape de validation du sujet, permettant une répartition équilibrée de la charge de travail entre la configuration système et le développement de l'interface web.
+      </p>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between mt-4">
+    <a href="administration.html" class="btn btn-outline-danger shadow">
+      <i class="bi bi-arrow-left me-2"></i> Administration
+    </a>
+    <a href="index.html" class="btn btn-outline-info shadow">
+      Retour Accueil <i class="bi bi-house ms-2"></i>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
