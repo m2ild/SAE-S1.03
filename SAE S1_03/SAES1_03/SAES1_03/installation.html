@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installation - Gr105 Binôme 01</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">
+      <i class="bi bi-terminal me-2 text-primary"></i>SAÉ S1.03
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav gap-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link active" href="installation.html">Installation</a></li>
+        <li class="nav-item"><a class="nav-link" href="administration.html">Administration</a></li>
+        <li class="nav-item"><a class="nav-link" href="planification.html">Planification</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="margin-top: 120px; margin-bottom: 50px;">
+  <header class="text-center mb-5">
+    <h1 class="display-4 fw-bold">Déploiement VM</h1>
+    <p class="text-white-50">Choix techniques et justifications matérielles</p>
+  </header>
+
+  <section class="mb-5">
+    <div class="glass-card">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h2 class="text-primary mb-3"><i class="bi bi-box me-2"></i>1. Hyperviseur : VirtualBox</h2>
+          <p>Nous avons choisi <strong>Oracle VM VirtualBox</strong> pour sa nature Open Source et sa portabilité.</p>
+          <div class="justification-box">
+            <span class="justification-title">Justification Type 2</span>
+            <p class="mb-0 small text-white-50">
+              Contrairement au "Bare Metal" (Type 1), VirtualBox s'installe sur Windows (hôte). Cela permet de conserver l'usage bureautique de la machine physique tout en isolant l'environnement de développement (Sandbox), garantissant qu'une erreur critique dans la VM n'impacte pas l'ordinateur de l'étudiant[cite: 768, 769].
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center d-none d-lg-block">
+          <i class="bi bi-layers display-1 text-white-50 opacity-50"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <div class="glass-card">
+      <h2 class="text-info mb-3"><i class="bi bi-ubuntu me-2"></i>2. OS : Ubuntu 24.04 LTS</h2>
+      <p>Installation de la version Desktop (GNOME) plutôt que Server.</p>
+      <div class="justification-box">
+        <span class="justification-title">Choix Pédagogique</span>
+        <p class="mb-0 small text-white-50">
+          Ce choix nous permet de vérifier le rendu du site web (<code>localhost</code>) directement dans la VM via Firefox avant de configurer la redirection de ports externe. Cela facilite grandement le débogage immédiat[cite: 773, 774].
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row g-4 mb-5">
+    <div class="col-md-6">
+      <div class="glass-card">
+        <h3 class="h5 text-danger"><i class="bi bi-memory me-2"></i>Mémoire : 8 Go</h3>
+        <p>Allocation de 8 Go de RAM.</p>
+        <div class="justification-box">
+          <span class="justification-title">Dimensionnement (Hôte 32 Go)</span>
+          <p class="mb-0 small text-white-50">
+            Comme l'hôte possède <strong>32 Go de RAM</strong>, dédier 8 Go ne représente que 25% des ressources totales. Cela évite le swap sur la machine physique tout en assurant la fluidité de WebStorm et Apache dans la VM[cite: 778, 779].
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="glass-card">
+        <h3 class="h5 text-warning"><i class="bi bi-hdd me-2"></i>Stockage : 25 Go</h3>
+        <p>Disque virtuel dynamique.</p>
+        <div class="justification-box">
+          <span class="justification-title">Optimisation</span>
+          <p class="mb-0 small text-white-50">
+            25 Go suffisent pour l'OS et les fichiers du site. L'allocation dynamique permet de ne pas gaspiller l'espace disque de l'hôte[cite: 781, 782].
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <div class="glass-card">
+      <h3 class="h4 mb-4">Configuration Initiale</h3>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="p-3 border border-secondary rounded bg-dark bg-opacity-50">
+            <strong class="d-block text-primary mb-1">Clavier</strong>
+            Français (AZERTY) pour éviter les erreurs de syntaxe dans les fichiers de config[cite: 834].
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 border border-secondary rounded bg-dark bg-opacity-50">
+            <strong class="d-block text-primary mb-1">Partitionnement</strong>
+            "Effacer le disque" pour une installation propre et sécurisée sur le volume virtuel vierge[cite: 849, 850].
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 border border-secondary rounded bg-dark bg-opacity-50">
+            <strong class="d-block text-primary mb-1">Fuseau Horaire</strong>
+            Europe/Paris, crucial pour la cohérence des logs système[cite: 859].
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="text-center">
+    <a href="administration.html" class="btn btn-primary rounded-pill px-5 py-3 shadow">
+      Suite : Administration <i class="bi bi-arrow-right ms-2"></i>
+    </a>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
